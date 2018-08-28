@@ -1,7 +1,5 @@
 package com.example.cletrezo.bakingapp.utils;
 
-import android.util.Log;
-
 import com.example.cletrezo.bakingapp.model.Ingredients;
 import com.example.cletrezo.bakingapp.model.RecipeModel;
 import com.example.cletrezo.bakingapp.model.Steps;
@@ -10,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.IDN;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,9 +62,7 @@ public class RecipeDataSource {
                 int id1 = stepsObject.optInt(STEPS_ID);
                 String shortDescription = stepsObject.optString(SHORT_DESCRIPTION);
                 String description = stepsObject.optString(DESCRIPTION);
-               /* if(stepsObject.optString(VIDEO_URL).isEmpty()){
-                    String videoURL = "NO VIDEOURL";
-                }*/
+
                 String videoURL = stepsObject.optString(VIDEO_URL);
                 Steps stepsModel = new Steps(id1, shortDescription, description, videoURL);
                 stepsList.add(stepsModel);

@@ -8,4 +8,7 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="recipes">Choose a Recipe</string>
+    <string name="List_of_ingredients">List of Ingredients Needed</string>
+    <string name="steps_to_make_recipe">STEPS TO MAKE RECIPE</string>
+    <string name="ingre">INGREDIENTS</string>
 </resources>

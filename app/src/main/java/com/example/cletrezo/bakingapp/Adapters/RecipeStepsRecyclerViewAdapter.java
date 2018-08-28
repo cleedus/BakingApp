@@ -8,10 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.cletrezo.bakingapp.CommunicationChannel;
-import com.example.cletrezo.bakingapp.Fragments.RecipeInstructionFragment;
 import com.example.cletrezo.bakingapp.R;
 import com.example.cletrezo.bakingapp.RecipeDetailActivity;
 import com.example.cletrezo.bakingapp.RecipeVideoInstructionActivity;
@@ -65,26 +63,30 @@ public class RecipeStepsRecyclerViewAdapter extends RecyclerView.Adapter<RecipeS
 
             textView = itemView.findViewById(R.id.recipe_steps_item);
 
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                     position= getLayoutPosition();
-                    if(position!=RecyclerView.NO_POSITION) {
-                        if(RecipeDetailActivity.deviceType){ communicationChannel.passData(recipeStepsList.get(position).getVideoUrl(),recipeStepsList.get(position).getDescription() ,position );
-                        }else {
-                            Intent intent = new Intent(context, RecipeVideoInstructionActivity.class);
-                            if (recipeStepsList.get(position).getVideoUrl().isEmpty()) {
-                                intent.putExtra("VIDEOURL", "NO VIDEO");
-                            }
-                            intent.putExtra("VIDEOURL", recipeStepsList.get(position).getVideoUrl());
-                            intent.putExtra("DESCRIPTION", recipeStepsList.get(position).getDescription());
-                            intent.putExtra("position", position);
-                            context.startActivity(intent);
-                        }
-                    }
 
-                }
-            });
+
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        position = getLayoutPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            if (RecipeDetailActivity.deviceType) {
+                                communicationChannel.passData(recipeStepsList.get(position).getVideoUrl(), recipeStepsList.get(position).getDescription(), position);
+                            } else {
+                                Intent intent = new Intent(context, RecipeVideoInstructionActivity.class);
+                                if (recipeStepsList.get(position).getVideoUrl().equals(" ")) {
+                                    intent.putExtra("VIDEOURL", "NO VIDEO");
+                                }
+                                intent.putExtra("VIDEOURL", recipeStepsList.get(position).getVideoUrl());
+                                intent.putExtra("DESCRIPTION", recipeStepsList.get(position).getDescription());
+                                intent.putExtra("position", position);
+                                context.startActivity(intent);
+                            }
+                        }
+
+                    }
+                });
+            }
         }
     }
-}
+

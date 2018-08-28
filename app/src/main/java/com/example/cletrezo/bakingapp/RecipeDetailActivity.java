@@ -1,31 +1,23 @@
 package com.example.cletrezo.bakingapp;
 
-import android.content.Intent;
-import android.os.CountDownTimer;
-import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-//import com.example.cletrezo.bakingapp.Fragments.IngredientsFragment;
-import com.example.cletrezo.bakingapp.Adapters.IngredientListRecyclerViewAdapter;
 import com.example.cletrezo.bakingapp.Fragments.ListOfIngredientsFragment;
 import com.example.cletrezo.bakingapp.Fragments.RecipeInstructionFragment;
 import com.example.cletrezo.bakingapp.Fragments.RecipeStepsDetailFragment;
 import com.example.cletrezo.bakingapp.Fragments.RecipeStepsFragment;
 import com.example.cletrezo.bakingapp.Fragments.RecipeVideoFragment;
 import com.example.cletrezo.bakingapp.model.RecipeModel;
-import com.google.android.exoplayer2.ui.PlayerView;
 
 import java.util.Objects;
+
+//import com.example.cletrezo.bakingapp.Fragments.IngredientsFragment;
 
 public class RecipeDetailActivity extends AppCompatActivity implements CommunicationChannel{
 
@@ -120,14 +112,14 @@ public class RecipeDetailActivity extends AppCompatActivity implements Communica
                     fragmentTransaction = manager.beginTransaction();
 
                     if(listOfIngredientsFragment.isVisible()){
-                        textViewIngredient.setText("List of Ingredients Needed");
-                        textViewSteps.setText("STEPS");
+                        textViewIngredient.setText(R.string.List_of_ingredients);
+                        textViewSteps.setText(R.string.steps);
                         fragmentTransaction.replace(R.id.frag_container_2,recipeStepsFragment);
                         fragmentTransaction.addToBackStack("add4");
                         fragmentTransaction.commit();
                     }else {
-                        textViewIngredient.setText("STEPS TO MAKE RECIPE");
-                        textViewSteps.setText("INGREDIENTS");
+                        textViewIngredient.setText(R.string.steps_to_make_recipe);
+                        textViewSteps.setText(R.string.ingre);
                         fragmentTransaction.replace(R.id.frag_container_2,listOfIngredientsFragment );
                         fragmentTransaction.addToBackStack("add5");
                         fragmentTransaction.commit();

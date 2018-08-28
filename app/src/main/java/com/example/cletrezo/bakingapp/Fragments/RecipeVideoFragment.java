@@ -1,19 +1,15 @@
 package com.example.cletrezo.bakingapp.Fragments;
 
-import android.content.Intent;
-import android.content.IntentSender;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.cletrezo.bakingapp.R;
 import com.example.cletrezo.bakingapp.model.RecipeModel;
@@ -30,7 +26,7 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
-public class RecipeVideoFragment extends Fragment {
+public class RecipeVideoFragment extends Fragment{
     public SimpleExoPlayer simpleExoPlayer;
     String videoUrl;
     PlayerView playerView;
@@ -78,19 +74,11 @@ public class RecipeVideoFragment extends Fragment {
 
                 if (getArguments() != null) {
                     videoUrl = getArguments().getString("video");
-                    //description = getArguments().getString("desc");
-                    //int position = getArguments().getInt("pos");
+
                 }
 
             }
 
-
-
-
-
-            /*if(getResources().getConfiguration().orientation==Configuration.ORIENTATION_PORTRAIT){
-                playerView.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIT);
-            }*/
 
             // if video has no url replace with no video image view
             if (videoUrl != null && videoUrl.isEmpty()) {

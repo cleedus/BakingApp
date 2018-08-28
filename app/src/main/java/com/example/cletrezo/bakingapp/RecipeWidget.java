@@ -1,20 +1,13 @@
 package com.example.cletrezo.bakingapp;
 
-import android.app.ActionBar;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import com.example.cletrezo.bakingapp.utils.RecipeDataSource;
-import com.google.android.exoplayer2.C;
-
-import java.util.ArrayList;
 
 /**
  * Implementation of App Widget functionality.
@@ -28,7 +21,7 @@ public class RecipeWidget extends AppWidgetProvider {
 
 
         CharSequence widgetText = RecipeWidgetConfigureActivity.loadTitlePref(context, appWidgetId);
-       // if(widgetText.equals("Nutella Pie")){
+
 
             //Toast.makeText(context, "equal" + " "+ widgetText, Toast.LENGTH_SHORT).show();
             Intent goToRemoteServiceIntent = new Intent(context, RecipeWidgetService.class);
@@ -45,20 +38,7 @@ public class RecipeWidget extends AppWidgetProvider {
             appWidgetManager.updateAppWidget(appWidgetId, rv);
 
 
-        //}
 
-        // CharSequence widgetText = context.getString(R.string.appwidget_text);
-        // Construct the RemoteViews object
-
-
-
-
-        /*views.setTextViewText(R.id.appwidget_text, widgetText);
-        Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        views.setOnClickPendingIntent(R.id.appwidget_text,pendingIntent );
-*/
-        // Instruct the widget manager to update the widget
 
     }
 

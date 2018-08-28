@@ -1,45 +1,20 @@
 package com.example.cletrezo.bakingapp;
 
-import android.content.res.Configuration;
-import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.cletrezo.bakingapp.Adapters.RecipeStepsRecyclerViewAdapter;
 import com.example.cletrezo.bakingapp.Fragments.RecipeInstructionFragment;
-import com.example.cletrezo.bakingapp.Fragments.RecipeStepsFragment;
 import com.example.cletrezo.bakingapp.Fragments.RecipeVideoFragment;
-import com.google.android.exoplayer2.ExoPlayerFactory;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
-import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.trackselection.TrackSelector;
-import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
-import com.google.android.exoplayer2.ui.PlayerView;
-import com.google.android.exoplayer2.upstream.BandwidthMeter;
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 public class RecipeVideoInstructionActivity extends AppCompatActivity {
-    PlayerView playerView;
-    SimpleExoPlayer simpleExoPlayer;
-    ImageView imageView;
-    TextView textView;
-    String description;
-    ImageButton imageButton_Previous;
-    ImageButton imageButton_Next;
-    RecipeStepsRecyclerViewAdapter recipeStepsRecyclerViewAdapter = new RecipeStepsRecyclerViewAdapter();
-    int position;
-    MediaSource mediaSource;
+
+   private String description;
+
+    private int position;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
