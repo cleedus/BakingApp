@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/single_recipe_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/ingredient_text"
+            android:layout_width="match_parent"
+            android:textColor="@color/md_black_1000"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredient_list"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/quantity_text"
+            android:layout_below="@id/ingredient_text"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/md_black_1000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_below="@id/quantity_text"
+            android:id="@+id/measure_text"
+            android:textColor="@color/md_black_1000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/measure"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/ingredient_value"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="yduududuuduududuuuuuuuduuduududuu"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/quantity_value"
+            android:layout_below="@id/ingredient_text"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_width="match_parent"
+            android:layout_marginStart="120dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="2222"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/measure_value"
+            android:layout_below="@id/quantity_text"
+            android:maxLines="2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RecipeDetailActivity">
+
+    <!--<fragment
+        android:id="@+id/ingredients_fragment"
+        android:name="com.example.cletrezo.bakingapp.Fragments.IngredientsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+    <TextView
+        android:id="@+id/ingredient_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_style"
+        android:text="@string/ingredients"
+        android:textAlignment="center"
+        android:layout_margin="4dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/steps_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/steps"
+        android:layout_margin="4dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
+
+    <!--<fragment
+        android:id="@+id/recipe_steps_fragment"
+        android:name="com.example.cletrezo.bakingapp.Fragments.RecipeStepsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag_container_2" />
+
+
+</LinearLayout>
