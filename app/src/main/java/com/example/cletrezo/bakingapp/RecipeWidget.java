@@ -27,7 +27,6 @@ public class RecipeWidget extends AppWidgetProvider {
             Intent goToRemoteServiceIntent = new Intent(context, RecipeWidgetService.class);
             goToRemoteServiceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,appWidgetId);
             goToRemoteServiceIntent.putExtra("name", widgetText);
-            //goToRemoteServiceIntent.putParcelableArrayListExtra("list", (ArrayList<? extends Parcelable>) recipeDataSource.getRecipeModelList().get(0).getIngredientsList());
             goToRemoteServiceIntent.setData(Uri.parse(goToRemoteServiceIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
 
