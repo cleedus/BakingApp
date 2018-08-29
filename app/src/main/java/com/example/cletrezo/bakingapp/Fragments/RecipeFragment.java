@@ -26,7 +26,7 @@ import java.net.URL;
 
 
 public class RecipeFragment extends Fragment{
-    private static RecipeDataSource recipeDataSource = new RecipeDataSource();
+    private RecipeDataSource recipeDataSource = new RecipeDataSource();
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
     RecipeRecyclerViewAdapter recipeRecyclerViewAdapter;

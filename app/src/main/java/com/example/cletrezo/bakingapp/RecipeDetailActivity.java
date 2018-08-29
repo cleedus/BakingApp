@@ -136,13 +136,14 @@ public class RecipeDetailActivity extends AppCompatActivity implements Communica
 
 
     @Override
-    public void passData(String url, String description, int position) {
+    public void passData(String url, String description, String thumbnailUrl, int position) {
         View view = findViewById(R.id.instructions_frag);
         RecipeStepsDetailFragment recipeStepsDetailFragment = new RecipeStepsDetailFragment();
         FragmentTransaction transaction = manager.beginTransaction();
         Bundle bundle = new Bundle();
         bundle.putString("url", url);
         bundle.putString("des", description);
+        bundle.putString("thumbnail", thumbnailUrl);
         recipeStepsDetailFragment.setArguments(bundle);
         view.setVisibility(View.GONE);
         transaction.replace(R.id.video_frag, recipeStepsDetailFragment,"p");

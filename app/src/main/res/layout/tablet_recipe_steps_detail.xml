@@ -27,4 +27,11 @@
         android:text="INSTRUCTIONS"
         android:textAlignment="center"/>
 
+    <ImageView
+        android:id="@+id/recipe_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/nutella_pie"/>
+
 </LinearLayout>

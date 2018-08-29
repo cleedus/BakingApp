@@ -1,15 +1,10 @@
 package com.example.cletrezo.bakingapp;
 
-import android.appwidget.AppWidgetManager;
-import android.arch.lifecycle.AndroidViewModel;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
-import android.widget.Toast;
 
-import com.example.cletrezo.bakingapp.model.IngredientB;
 import com.example.cletrezo.bakingapp.model.Ingredients;
 import com.example.cletrezo.bakingapp.model.RecipeModel;
 import com.example.cletrezo.bakingapp.model.Steps;
@@ -40,6 +35,7 @@ public class RecipeRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
     private final static String DESCRIPTION = "description";
     private final static String VIDEO_URL ="videoURL";
     private final static String SERVINGS = "servings";
+    private final static String THUMBNAILURL= "thumbnailURL";
     private static List<RecipeModel> recipeModelList = new ArrayList<>();
 
     public static List<RecipeModel> getRecipeModelList() {
@@ -182,7 +178,8 @@ public class RecipeRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
                         String shortDescription = stepsObject.optString(SHORT_DESCRIPTION);
                         String description = stepsObject.optString(DESCRIPTION);
                         String videoURL = stepsObject.optString(VIDEO_URL);
-                        Steps stepsModel = new Steps(id1, shortDescription, description, videoURL);
+                        String thumbnailUrl= stepsObject.getString(THUMBNAILURL);
+                        Steps stepsModel = new Steps(id1, shortDescription, description, videoURL,thumbnailUrl);
                         stepsList.add(stepsModel);
                     }
                     int servingSize = jsonObject.optInt(SERVINGS);

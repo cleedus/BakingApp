@@ -34,6 +34,7 @@ public class RecipeVideoFragment extends Fragment{
     ImageView imageView;
     View rootView;
     boolean deviceType;
+    ImageView recipeImageView;
 
     public RecipeVideoFragment() {
     }

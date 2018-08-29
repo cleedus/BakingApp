@@ -23,6 +23,7 @@ import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.squareup.picasso.Picasso;
 
 public class RecipeStepsDetailFragment extends Fragment {
 
@@ -33,6 +34,8 @@ public class RecipeStepsDetailFragment extends Fragment {
     ImageView imageView;
     String url;
     String desc;
+    String recipeThumbnail;
+    ImageView recipeImageThumnbail;
     public RecipeStepsDetailFragment() {
     }
 
@@ -47,10 +50,12 @@ public class RecipeStepsDetailFragment extends Fragment {
         playerView1 = rootView.findViewById(R.id.tablet_video_view);
         textView = rootView.findViewById(R.id.tablet_instructions);
         imageView = rootView.findViewById(R.id.tablet_no_video_view);
+        recipeImageThumnbail= rootView.findViewById(R.id.recipe_thumbnail);
 
         if (getArguments() != null) {
              url = getArguments().getString("url");
             desc = getArguments().getString("des");
+            recipeThumbnail = getArguments().getString("thumbnail");
         }
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
         TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
@@ -74,6 +79,15 @@ public class RecipeStepsDetailFragment extends Fragment {
         simpleExoPlayer1.setPlayWhenReady(true);
 
         textView.setText(desc);
+
+        //setting thumbnail if there is one provided
+        if(recipeThumbnail.isEmpty()){
+            recipeImageThumnbail.setVisibility(View.GONE);
+        }else {
+            Picasso.get()
+                    .load(recipeThumbnail)
+                    .into(recipeImageThumnbail);
+        }
 
 
         return  rootView;

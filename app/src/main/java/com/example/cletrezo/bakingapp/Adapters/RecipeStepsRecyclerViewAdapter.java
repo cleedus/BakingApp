@@ -71,7 +71,8 @@ public class RecipeStepsRecyclerViewAdapter extends RecyclerView.Adapter<RecipeS
                         position = getLayoutPosition();
                         if (position != RecyclerView.NO_POSITION) {
                             if (RecipeDetailActivity.deviceType) {
-                                communicationChannel.passData(recipeStepsList.get(position).getVideoUrl(), recipeStepsList.get(position).getDescription(), position);
+                                communicationChannel.passData(recipeStepsList.get(position).getVideoUrl(),
+                                        recipeStepsList.get(position).getDescription(),recipeStepsList.get(position).getThumnailUrl(), position);
                             } else {
                                 Intent intent = new Intent(context, RecipeVideoInstructionActivity.class);
                                 if (recipeStepsList.get(position).getVideoUrl().equals(" ")) {
