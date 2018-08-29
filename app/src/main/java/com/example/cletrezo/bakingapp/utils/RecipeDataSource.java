@@ -23,6 +23,7 @@ public class RecipeDataSource {
     private final static String SHORT_DESCRIPTION = "shortDescription";
     private final static String DESCRIPTION = "description";
     private final static String VIDEO_URL ="videoURL";
+    private final static String THUMBNAILURL= "thumbnailURL";
     private final static String SERVINGS = "servings";
 
     private  List<RecipeModel> recipeModelList = new ArrayList<>();
@@ -62,9 +63,9 @@ public class RecipeDataSource {
                 int id1 = stepsObject.optInt(STEPS_ID);
                 String shortDescription = stepsObject.optString(SHORT_DESCRIPTION);
                 String description = stepsObject.optString(DESCRIPTION);
-
                 String videoURL = stepsObject.optString(VIDEO_URL);
-                Steps stepsModel = new Steps(id1, shortDescription, description, videoURL);
+                String thumnailUrl=stepsObject.optString(THUMBNAILURL);
+                Steps stepsModel = new Steps(id1, shortDescription, description, videoURL,thumnailUrl);
                 stepsList.add(stepsModel);
             }
             int servingSize = jsonObject.optInt(SERVINGS);
