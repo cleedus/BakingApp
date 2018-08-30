@@ -34,7 +34,7 @@ public class RecipeVideoFragment extends Fragment{
     ImageView imageView;
     View rootView;
     boolean deviceType;
-    ImageView recipeImageView;
+
 
     public RecipeVideoFragment() {
     }
@@ -42,6 +42,9 @@ public class RecipeVideoFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+       // Objects.requireNonNull(((AppCompatActivity) Objects.requireNonNull(getActivity())).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
 
         rootView = inflater.inflate(R.layout.recipe_video, container, false);
         playerView = rootView.findViewById(R.id.video_view);

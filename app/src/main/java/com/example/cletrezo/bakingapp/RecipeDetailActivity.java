@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -51,7 +52,7 @@ public class RecipeDetailActivity extends AppCompatActivity implements Communica
 
 
         Objects.requireNonNull(getSupportActionBar()).setTitle((CharSequence) recipeModel.getName());
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // get tablet reference
          deviceType = getResources().getBoolean(R.bool.isTablet);
         // if tablet
@@ -91,8 +92,6 @@ public class RecipeDetailActivity extends AppCompatActivity implements Communica
 
 
 
-            //set Action bar title
-            Objects.requireNonNull(getSupportActionBar()).setTitle(recipeModel.getName());
 
 
             final Bundle bundle = new Bundle();
@@ -156,6 +155,22 @@ public class RecipeDetailActivity extends AppCompatActivity implements Communica
 
     }
 
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if(getFragmentManager().getBackStackEntryCount()>0){
+            getFragmentManager().popBackStack();
+        }else {
+            super.onBackPressed();
+        }
+    }
+}

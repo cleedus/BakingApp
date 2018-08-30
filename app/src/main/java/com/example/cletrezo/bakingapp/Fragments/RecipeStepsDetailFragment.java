@@ -94,16 +94,23 @@ public class RecipeStepsDetailFragment extends Fragment {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        simpleExoPlayer1.release();
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         simpleExoPlayer1.setPlayWhenReady(false);
+        simpleExoPlayer1.release();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         simpleExoPlayer1.stop();
-        simpleExoPlayer1.release();
+       // simpleExoPlayer1.release();
     }
 
     @Override
