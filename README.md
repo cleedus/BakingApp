@@ -1,5 +1,16 @@
 # BakingApp
+BakingApp is part of Udacity's Android Nanodegree program that has to be completed by students seeking the certificate.
 
+## Used Libraries
+* Exoplayer
+* Picasso
+* Expresso
+
+## Project Overview
+You will productionize an app, taking it from a functional state to a production-ready state. This will involve finding and handling error cases, adding accessibility features, allowing for localization, adding a widget, and adding a library.
+
+
+## Screenshots
 <p float="left">
 <img width="326" alt="sh1" src="https://user-images.githubusercontent.com/19339748/44886895-cda0c880-ac8e-11e8-8493-eb6aec86fb63.png"> 
 <img width="500" alt="sh6" src="https://user-images.githubusercontent.com/19339748/44887610-b8c63400-ac92-11e8-8e36-34573f708217.png">
