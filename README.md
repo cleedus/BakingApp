@@ -1,5 +1,5 @@
 # BakingApp
-BakingApp is part of Udacity's Android Nanodegree program that has to be completed by students seeking the certificate.
+BakingApp is part of Udacity Android Nanodegree program's project that has to be completed by students seeking the certificate.
 
 ## Used Libraries
 * Exoplayer
